@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="TemPlates/53784200832_aeee7dab0b_c.jpg.jpg" alt="Alex Okabo's Photo" class="profile-photo">
+        <h1>My Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! My name is Alex Okabo, and I am a dedicated cybersecurity professional with a passion for protecting digital assets and securing information systems. With a solid background in various areas of cybersecurity, I strive to create and maintain secure environments in an increasingly interconnected world.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills:</h2>
+        <ul>
+            <li>Network Security</li>
+            <li>System Administration</li>
+            <li>Programming and Scripting</li>
+            <li>Cryptography</li>
+            <li>Cloud Security</li>
+            <li>Penetration Testing and Ethical Hacking</li>
+            <li>Incident Response and Forensics</li>
+            <li>Security Information and Event Management (SIEM)</li>
+            <li>Malware Analysis</li>
+            <li>Identity and Access Management (IAM)</li>
+        </ul>
+        <h2>Soft Skills:</h2>
+        <ul>
+            <li>Problem-Solving</li>
+            <li>Attention to Detail</li>
+            <li>Communication</li>
+            <li>Collaboration</li>
+            <li>Continuous Learning</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Home Lab Setup</h3>
+            <p>Description: Create a personal cybersecurity lab using virtual machines (VMs) or physical hardware.</p>
+        </div>
+        <div class="project">
+            <h3>Network Monitoring and Intrusion Detection System (IDS)</h3>
+            <p>Description: Set up and configure a network monitoring tool and an IDS to detect potential threats.</p>
+        </div>
+        <div class="project">
+            <h3>Penetration Testing</h3>
+            <p>Description: Conduct penetration tests on a vulnerable web application or network to identify and exploit security flaws. Skills Gained: Vulnerability assessment, ethical hacking, report writing. Tools: Metasploit, Burp Suite, OWASP ZAP, Kali Linux.</p>
+        </div>
+        <div class="project">
+            <h3>Cryptography Implementation</h3>
+            <p>Description: Develop a small application that uses cryptographic algorithms to encrypt and decrypt data. Skills Gained: Understanding of cryptographic principles, programming. Tools: Python, OpenSSL, Java Cryptography Architecture (JCA).</p>
+        </div>
+        <div class="project">
+            <h3>Security Information and Event Management (SIEM) System</h3>
+            <p>Description: Deploy and configure a SIEM solution to collect and analyze security events from various sources. Skills Gained: Log management, incident detection and response, correlation rules. Tools: Splunk, ELK Stack (Elasticsearch, Logstash, Kibana), QRadar.</p>
+        </div>
+        <div class="project">
+            <h3>Incident Response Simulation</h3>
+            <p>Description: Create a simulated security incident and develop an incident response plan to handle it. Skills Gained: Incident management, forensics, communication. Tools: SIFT Workstation, Volatility, TheHive Project.</p>
+        </div>
+        <div class="project">
+            <h3>Web Application Security Testing</h3>
+            <p>Description: Develop a vulnerable web application and perform security testing on it to identify common vulnerabilities. Skills Gained: Web security, secure coding practices, vulnerability analysis. Tools: OWASP Juice Shop, DVWA (Damn Vulnerable Web Application).</p>
+        </div>
+        <div class="project">
+            <h3>Secure Application Development</h3>
+            <p>Description: Develop an application with security best practices implemented throughout the development lifecycle. Skills Gained: Secure coding, application security, threat modeling. Tools: Any programming language of choice, security libraries (e.g., OWASP ESAPI).</p>
+        </div>
+        <div class="project">
+            <h3>Cloud Security Project</h3>
+            <p>Description: Implement and secure a cloud infrastructure, focusing on identity management, data protection, and compliance. Skills Gained: Cloud security, IAM, compliance standards. Tools: AWS, Azure, Google Cloud, Terraform.</p>
+        </div>
+        <div class="project">
+            <h3>Phishing Simulation and Awareness</h3>
+            <p>Description: Create a phishing simulation campaign to educate users about phishing attacks and how to avoid them. Skills Gained: Social engineering, user education, email security. Tools: GoPhish, custom email templates.</p>
+        </div>
+        <div class="project">
+            <h3>Mobile Application Security Testing</h3>
+            <p>Description: Test a mobile application for security vulnerabilities and secure coding practices. Skills Gained: Mobile security, secure development lifecycle, vulnerability assessment. Tools: MobSF, Android Studio, Xcode.</p>
+        </div>
+        <div class="project">
+            <h3>Security Policy Development</h3>
+            <p>Description: Develop a comprehensive security policy for an organization, covering aspects like data protection, access control, and incident response. Skills Gained: Policy development, compliance, risk management. Tools: Policy templates, guidelines from standards like ISO 27001.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 @TechManKe. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js">
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            const formData = {
+                name: name,
+                email: email,
+                message: message
+            };
+            
+            fetch('https://jsonplaceholder.typicode.com/posts', {  // Replace with your backend URL
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(`Thank you, ${name}! Your message has been sent.`);
+                document.getElementById('contact-form').reset();
+            })
+            .catch(error => {
+                alert('An error occurred. Please try again later.');
+                console.error('Error:', error);
+            });
+        });
+        
+    </script>
+</body>
+</html>
